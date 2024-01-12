@@ -19,6 +19,9 @@ $conn= new mysqli($servername, $username, $password, $dbname);
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+
+    
+
     $check_email = "SELECT * FROM `user_registeration` WHERE email = '$email'";
 $check_email_query = $conn->query($check_email);
 
@@ -33,7 +36,7 @@ else {
     `first_name` = '$fname',
     `last_name` = '$lname',
     `email` = '$email',
-    `password` = '$hashedPassword',
+    `pass` = '$hashedPassword',
     `role` = '$role'";
 
     $result = $conn->query($sql);
