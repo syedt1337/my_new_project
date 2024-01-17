@@ -45,13 +45,46 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    </head>
-   <body>
+   
     
-   
+      
+      
    
    <body>
-      
+   <?php
+session_start();
+error_reporting(0);
+
+// if($_SESSION["email"])
+// {
+    
+    
+// }
+// else{
+    
+//     header('location:login_form.html');
+// }
+?>
+<?php
+  if($_SESSION['role']==='admin')
+  {
+   ?>
+   <nav class="navbar navbar-dark bg-dark">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <h5 class="nav-link text-light"><span class="online-dot"></span>Hello, <?php echo $_SESSION['first_name'];?>(<?php echo $_SESSION['role'];?>)</h5>
+        </li>
+    </ul>
+</nav>
+  <?php
+  }
+  ?>
       <div class="banner_bg_main">
          
          <div class="container">
@@ -60,7 +93,7 @@
                   <div class="col-sm-12">
                      <div class="custom_menu">
                         <ul>
-                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Best Sellers <?php echo $_SESSION['first_name'];?></a></li>
                            <li><a href="#">Gift Ideas</a></li>
                            <li><a href="#">New Releases</a></li>
                            <li><a href="#">Today's Deals</a></li>
@@ -92,7 +125,7 @@
                      <a href="index.html">Home</a>
                      <a href="fashion.html">Fashion</a>
                      <a href="electronic.html">Electronic</a>
-                     <a href="jewellery.html">Jewellery</a>
+                     <a href="jewellery.html">Jewellery   </a>
                   </div>
                   <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
                   <div class="dropdown">
@@ -152,7 +185,7 @@
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                              <div class="buynow_bt"><a href="#">Buy Now </a></div>
                            </div>
                         </div>
                      </div>
@@ -302,7 +335,7 @@
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
                                  <h4 class="shirt_text">Woman Scart</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                 <p class="price_text">Price  <?php echo $_SESSION["first_name"]?><span style="color: #262626;">$ 30</span></p>
                                  <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>

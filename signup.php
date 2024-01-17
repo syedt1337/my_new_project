@@ -12,17 +12,17 @@ $conn= new mysqli($servername, $username, $password, $dbname);
     }
 
     $fname= $_POST["firstname"];
-    $lname= $_POST["lname"];
+    $lname= $_POST["lastname"];
     $email = $_POST["email"];
-    $pass=$_POST["password"];
+    $password=$_POST["password"];
     $role= $_POST["role"];
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
 
     
 
-    $check_email = "SELECT * FROM `user_registeration` WHERE email = '$email'";
+    $check_email = "SELECT * FROM `registeration` WHERE email = '$email'";
 $check_email_query = $conn->query($check_email);
 
 if ($check_email_query->num_rows > 0)
@@ -36,7 +36,7 @@ else {
     `first_name` = '$fname',
     `last_name` = '$lname',
     `email` = '$email',
-    `pass` = '$hashedPassword',
+    `pass` = '$password',
     `role` = '$role'";
 
     $result = $conn->query($sql);
